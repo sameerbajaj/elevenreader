@@ -1,0 +1,13 @@
+# Binaries
+/elevenreader
+/elevenreader.exe
+/bin/
+/dist/
+
+# Local test & scratch data
+*.log
+*.tmp
+*.ldb
+*.sqlite
+.DS_Store
+Thumbs.db
