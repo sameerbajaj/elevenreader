@@ -7,6 +7,7 @@ import (
 	"io"
 	"mime/multipart"
 	"net/http"
+	"net/textproto"
 	"net/url"
 	"os"
 	"path/filepath"
@@ -213,6 +214,28 @@ type AddReadOptions struct {
 	Description string
 }
 
+
+func createFormFileWithContentType(w *multipart.Writer, fieldname, filename, contentType string) (io.Writer, error) {
+	h := make(textproto.MIMEHeader)
+	h.Set("Content-Disposition", fmt.Sprintf(`form-data; name="%s"; filename="%s"`, fieldname, filename))
+	h.Set("Content-Type", contentType)
+	return w.CreatePart(h)
+}
+
+func detectContentType(filename string) string {
+	ext := strings.ToLower(filepath.Ext(filename))
+	switch ext {
+	case ".pdf":
+		return "application/pdf"
+	case ".epub":
+		return "application/epub+zip"
+	case ".html", ".htm":
+		return "text/html"
+	default:
+		return "text/plain"
+	}
+}
+
 // AddRead imports a website URL, document file, or raw text into the ElevenReader library.
 func (c *Client) AddRead(opts AddReadOptions) (*Read, error) {
 	var body bytes.Buffer
@@ -221,6 +244,7 @@ func (c *Client) AddRead(opts AddReadOptions) (*Read, error) {
 	if opts.SourceURL != "" {
 		_ = writer.WriteField("source", "website")
 		_ = writer.WriteField("source_url", opts.SourceURL)
+		_ = writer.WriteField("parse_content", "true")
 	} else if opts.FilePath != "" {
 		file, err := os.Open(opts.FilePath)
 		if err != nil {
@@ -229,7 +253,9 @@ func (c *Client) AddRead(opts AddReadOptions) (*Read, error) {
 		defer file.Close()
 
 		_ = writer.WriteField("source", "file")
-		part, err := writer.CreateFormFile("from_document", filepath.Base(opts.FilePath))
+		_ = writer.WriteField("parse_content", "true")
+		filename := filepath.Base(opts.FilePath)
+		part, err := createFormFileWithContentType(writer, "from_document", filename, detectContentType(filename))
 		if err != nil {
 			return nil, err
 		}
@@ -238,11 +264,12 @@ func (c *Client) AddRead(opts AddReadOptions) (*Read, error) {
 		}
 	} else if opts.Text != "" {
 		_ = writer.WriteField("source", "file")
-		filename := "note.txt"
+		_ = writer.WriteField("parse_content", "true")
+		filename := "article.txt"
 		if opts.Title != "" {
 			filename = strings.ReplaceAll(opts.Title, " ", "_") + ".txt"
 		}
-		part, err := writer.CreateFormFile("from_document", filename)
+		part, err := createFormFileWithContentType(writer, "from_document", filename, "text/plain")
 		if err != nil {
 			return nil, err
 		}
