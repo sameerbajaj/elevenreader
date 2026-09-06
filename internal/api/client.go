@@ -302,12 +302,18 @@ func (c *Client) AddRead(opts AddReadOptions) (*Read, error) {
 		return nil, err
 	}
 
-	// If a custom title was provided, patch it immediately
-	if opts.Title != "" && created.ReadID != "" {
-		_ = c.UpdateRead(created.ReadID, ReadUpdatePayload{
-			Title: &opts.Title,
-		})
-		created.Title = opts.Title
+	// If custom title or author were provided, patch them
+	if created.ReadID != "" && (opts.Title != "" || opts.Author != "") {
+		payload := ReadUpdatePayload{}
+		if opts.Title != "" {
+			payload.Title = &opts.Title
+			created.Title = opts.Title
+		}
+		if opts.Author != "" {
+			payload.Author = &opts.Author
+			created.Author = &opts.Author
+		}
+		_ = c.UpdateRead(created.ReadID, payload)
 	}
 
 	return &created, nil
