@@ -1,0 +1,27 @@
+{
+  "name": "@sameerbajaj/elevenreader",
+  "version": "1.0.0",
+  "description": "Fast, lightweight, scriptable CLI for ElevenReader library CRUD operations, markdown reading, and collections",
+  "main": "bin/index.js",
+  "bin": {
+    "elevenreader": "bin/elevenreader"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sameerbajaj/elevenreader.git"
+  },
+  "keywords": [
+    "elevenreader",
+    "elevenlabs",
+    "audiobook",
+    "reader",
+    "cli",
+    "markdown"
+  ],
+  "author": "Sameer Bajaj <sameerbajaj24@gmail.com> (https://sameerbajaj.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sameerbajaj/elevenreader/issues"
+  },
+  "homepage": "https://sameerbajaj.com"
+}

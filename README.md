@@ -1,9 +1,11 @@
 # elevenreader
 
-[![Go Version](https://img.shields.io/github/go-mod/go-version/sameerbajaj/elevenreader)](https://golang.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Go Reference](https://pkg.go.dev/badge/github.com/sameerbajaj/elevenreader.svg)](https://pkg.go.dev/github.com/sameerbajaj/elevenreader)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Author](https://img.shields.io/badge/Author-Sameer%20Bajaj-blue.svg)](https://sameerbajaj.com)
+[![Tools](https://img.shields.io/badge/Tools-sameerbajaj.com%2Ftools-blue.svg)](https://sameerbajaj.com/tools)
 
-A fast, lightweight, and scriptable command-line client for [ElevenReader](https://elevenreader.io/reader/library).
+A fast, lightweight, and scriptable command-line client for [ElevenReader](https://elevenreader.io/reader/library), built by [Sameer Bajaj](https://sameerbajaj.com).
 
 Manage your ElevenReader library directly from your terminal: list items, read clean Markdown transcripts, import articles from URLs or documents, organize collections, export bookmarks, and automate CRUD workflows with full JSON output.
 
@@ -260,6 +262,12 @@ done
 
 ---
 
-## License
+## 👤 Author
 
-MIT License. See [LICENSE](LICENSE) for details.
+Developed by [Sameer Bajaj](https://sameerbajaj.com), a Product Manager & Software Builder. Explore more developer tools at [sameerbajaj.com/tools](https://sameerbajaj.com/tools).
+
+---
+
+## 📄 License
+
+Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for details.
