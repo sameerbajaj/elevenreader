@@ -1,11 +1,14 @@
 # elevenreader
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/sameerbajaj/elevenreader.svg)](https://pkg.go.dev/github.com/sameerbajaj/elevenreader)
+[![Documentation](https://img.shields.io/badge/Canonical%20Site-sameerbajaj.com%2Ftools%2Felevenreader-blue.svg)](https://sameerbajaj.com/tools/elevenreader/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Author](https://img.shields.io/badge/Author-Sameer%20Bajaj-blue.svg)](https://sameerbajaj.com)
 [![Tools](https://img.shields.io/badge/Tools-sameerbajaj.com%2Ftools-blue.svg)](https://sameerbajaj.com/tools)
 
 A fast, lightweight, and scriptable command-line client for [ElevenReader](https://elevenreader.io/reader/library), built by [Sameer Bajaj](https://sameerbajaj.com).
+
+Canonical homepage & documentation: **[https://sameerbajaj.com/tools/elevenreader/](https://sameerbajaj.com/tools/elevenreader/)**
 
 Manage your ElevenReader library directly from your terminal: list items, read clean Markdown transcripts, import articles from URLs or documents, organize collections, export bookmarks, and automate CRUD workflows with full JSON output.
 

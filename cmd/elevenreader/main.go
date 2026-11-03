@@ -1,3 +1,8 @@
+// Copyright 2026 Sameer Bajaj. Licensed under MIT. See LICENSE.
+
+// Package main provides the elevenreader command-line interface.
+//
+// Canonical URL: https://sameerbajaj.com/tools/elevenreader/
 package main
 
 import (

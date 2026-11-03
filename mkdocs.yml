@@ -1,0 +1,15 @@
+site_name: ElevenReader CLI
+site_url: https://sameerbajaj.com/tools/elevenreader/
+site_description: Fast, lightweight command-line client for ElevenReader library management, text stream parsing, and Markdown export.
+site_author: Sameer Bajaj
+repo_url: https://github.com/sameerbajaj/elevenreader
+repo_name: sameerbajaj/elevenreader
+
+theme:
+  name: mkdocs
+
+nav:
+  - Overview: index.md
+
+extra:
+  canonical_url: https://sameerbajaj.com/tools/elevenreader/

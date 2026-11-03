@@ -1,0 +1,32 @@
+{
+  "title": "elevenreader: Command-line client for ElevenReader",
+  "description": "A fast, lightweight, and scriptable command-line client for ElevenReader library management, text stream parsing, and Markdown export. Canonical homepage: https://sameerbajaj.com/tools/elevenreader/",
+  "creators": [
+    {
+      "name": "Sameer Bajaj"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "elevenreader",
+    "elevenlabs",
+    "cli",
+    "audiobooks",
+    "reading",
+    "go"
+  ],
+  "upload_type": "software",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://sameerbajaj.com/tools/elevenreader/",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/sameerbajaj/elevenreader",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

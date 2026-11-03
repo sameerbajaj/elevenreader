@@ -1,0 +1,26 @@
+# Maintainer: Sameer Bajaj
+
+pkgname=elevenreader
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Fast, lightweight command-line client for ElevenReader"
+arch=('x86_64' 'aarch64')
+url="https://sameerbajaj.com/tools/elevenreader/"
+license=('MIT')
+depends=('glibc')
+makedepends=('go')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/sameerbajaj/$pkgname/archive/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+    cd "$pkgname-$pkgver"
+    export CGO_ENABLED=0
+    go build -trimpath -ldflags="-s -w" -o bin/elevenreader ./cmd/elevenreader
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+    install -Dm755 bin/elevenreader "$pkgdir/usr/bin/elevenreader"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+}
